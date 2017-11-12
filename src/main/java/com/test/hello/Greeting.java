@@ -1,4 +1,4 @@
-package hello;
+package com.test.hello;
 
 /**
  * Created with IntelliJ IDEA.

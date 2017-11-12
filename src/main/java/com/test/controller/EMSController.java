@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @Controller
-@RequestMapping("/ems/")
+@RequestMapping("/ems")
 public class EMSController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @RequestMapping(method= RequestMethod.POST)
     public @ResponseBody
     String sayHello(@RequestBody EMSRequestBody emsRequestBody) {
-        return null;
+        return "ems";
     }
 }

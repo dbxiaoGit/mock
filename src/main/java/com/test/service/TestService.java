@@ -16,5 +16,7 @@ public class TestService {
     @Test
     public void test(){
         logger.info("姓名：{},年龄：{}","zhangsan","17");
+        logger.info("com.fasterxml.jackson.dataformat".replaceAll("\\.","/"));
+        logger.info("org.codehaus.woodstox".replaceAll("\\.","/"));
     }
 }
