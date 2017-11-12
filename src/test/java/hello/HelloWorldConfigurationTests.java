@@ -11,6 +11,8 @@ import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.embedded.LocalServerPort;
@@ -32,7 +34,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 @SpringBootTest(classes = HelloWorldConfiguration.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = {"management.port=0"})
 public class HelloWorldConfigurationTests {
-
+    private final Logger logger = LoggerFactory.getLogger(getClass());
     @LocalServerPort
     private int port;
 
@@ -49,6 +51,7 @@ public class HelloWorldConfigurationTests {
                 "http://localhost:" + this.port + "/hello-world", Map.class);
 
         then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+        logger.info("姓名：{},年龄：{}","zhangsan","17");
     }
 
     @Test
